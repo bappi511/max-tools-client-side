@@ -5,7 +5,7 @@ const Product = ({ product }) => {
     const { _id, name, price, img, quantity, minimum_order } = product;
     const navigate = useNavigate();
 
-    const redirectToPurchase = (id) => {
+    const handleToPurchase = (id) => {
         navigate(`/Product/${id}`);
     };
     return (
@@ -27,10 +27,10 @@ const Product = ({ product }) => {
                 <div className="flex flex-col items-center justify-between border-t border-slate-200 pt-2 text-slate-500 text-md">
                     <h4>Minimum Order: {minimum_order}</h4>
                     <button
-                        onClick={() => redirectToPurchase(_id)}
+                        onClick={() => handleToPurchase(_id)}
                         className="bg-secondary hover:bg-secondary-focus py-2 px-5 capitalize text-white  rounded-sm mt-2 text-md font-bold"
                     >
-                        Place order
+                        PURCHASE
                     </button>
                 </div>
             </div>
