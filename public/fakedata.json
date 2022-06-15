@@ -1,0 +1,44 @@
+[
+    {
+        "name": "random orbital palm sander",
+        "price": "300",
+        "quantity": 40,
+        "minimum_order": 10,
+        "img": "https://i.ibb.co/sjzySHW/product1.png"
+    },
+    {
+        "name": "craftsman bolt on drill",
+        "price": "300",
+        "quantity": 40,
+        "minimum_order": 10,
+        "img": "https://i.ibb.co/6RMqxhK/product2.png"
+    },
+    {
+        "name": "CORDLESS DRILL/DRIVER",
+        "price": "300",
+        "quantity": 40,
+        "minimum_order": 10,
+        "img": "https://i.ibb.co/gjZfmN6/product3.png"
+    },
+    {
+        "name": "colt palm router",
+        "price": "300",
+        "quantity": 40,
+        "minimum_order": 10,
+        "img": "https://i.ibb.co/nPqk6Cp/product4.png"
+    },
+    {
+        "name": "Circular Saw",
+        "price": "300",
+        "quantity": 40,
+        "minimum_order": 10,
+        "img": "https://i.ibb.co/F3jJJQm/product5.png"
+    },
+    {
+        "name": " Cordless Chainsaw",
+        "price": "300",
+        "quantity": 40,
+        "minimum_order": 10,
+        "img": "https://i.ibb.co/P5pjBT5/product6.png"
+    }
+]
