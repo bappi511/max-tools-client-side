@@ -56,7 +56,7 @@ const Reviews = () => {
                             <SwiperSlide key={review._id} className="pb-10 mr-2">
                                 <div className="flex justify-center flex-col items-center p-5 gap-2 border-2 border-slate-100 bg-base-100 rounded-lg">
                                     <img
-                                        className=" w-16 rounded-lg"
+                                        className=" w-16 rounded-full"
                                         src={review.img}
                                         alt=""
                                     />
