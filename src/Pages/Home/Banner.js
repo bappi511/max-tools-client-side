@@ -5,7 +5,6 @@ import bg from '../../assets/images/bg.png';
 const Banner = () => {
     return (
         <div
-            id="hero"
             className=" bg-cover bg-bottom bg-no-repeat pb-8"
             style={{ backgroundImage: `url(${bg})` }}
         >
@@ -30,7 +29,7 @@ const Banner = () => {
                                 . The kits are durable, low cost and long lasting.
                             </p>
                             <Link to="/products">
-                                <button className="btn rounded-sm text-white">
+                                <button className="btn rounded-lg border-0 bg-sky-800 hover:bg-sky-900 text-white">
                                     Browse Products
                                 </button>
                             </Link>

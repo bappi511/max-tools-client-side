@@ -10,11 +10,11 @@ const Product = ({ product }) => {
     };
     return (
         <div className="item border-slate-100 border-2 rounded-lg">
-            <div className=" relative h-48 md:h-56 bg-cover bg-no-repeat bg-center rounded-t-lg bg-[#ffffff] overflow-hidden">
+            <div className=" relative h-85 md:h-85 bg-cover bg-no-repeat bg-center rounded-t-lg bg-[#ffffff] overflow-hidden">
                 <img
                     src={img}
                     alt=""
-                    className="item-thumbnail w-full h-full object-cover rounded-t-lg transition-all duration-500"
+                    className="item-thumbnail w-full h-auto object-cover rounded-t-lg transition-all duration-500"
                 />
                 <span className="absolute top-0 right-0 text-sm bg-primary-content text-white py-1 px-2">
                     Available: <strong>{quantity}</strong>
@@ -28,7 +28,7 @@ const Product = ({ product }) => {
                     <h4>Minimum Order: {minimum_order}</h4>
                     <button
                         onClick={() => handleToPurchase(_id)}
-                        className="bg-secondary hover:bg-secondary-focus py-2 px-5 capitalize text-white  rounded-sm mt-2 text-md font-bold"
+                        className="bg-sky-800 hover:bg-sky-900 py-2 px-5 capitalize text-white  rounded-sm mt-2 text-md font-bold"
                     >
                         PURCHASE
                     </button>

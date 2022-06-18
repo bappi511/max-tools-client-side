@@ -5,7 +5,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import Loading from '../Shared/Loading';
-import { Rating } from 'react-simple-star-rating';
 
 const Reviews = () => {
     const { data: reviews, isLoading } = useQuery("reviews", () =>
@@ -54,7 +53,7 @@ const Reviews = () => {
                         grabCursor={true}
                     >
                         {reviews.map((review) => (
-                            <SwiperSlide key={review._id} className="pb-16 mr-2">
+                            <SwiperSlide key={review._id} className="pb-10 mr-2">
                                 <div className="flex justify-center flex-col items-center p-5 gap-2 border-2 border-slate-100 bg-base-100 rounded-lg">
                                     <img
                                         className=" w-16 rounded-lg"
@@ -62,7 +61,7 @@ const Reviews = () => {
                                         alt=""
                                     />
 
-                                    <div className=" mt-2 mb-2 text-orange-400">
+                                    <div style={{ color: '#FFBC0B', fontSize: '18px' }} className=" font-light  mt-2 mb-2">
                                         <i class="fas fa-star filled"></i>
                                         <i class="fas fa-star filled"></i>
                                         <i class="fas fa-star filled"></i>
