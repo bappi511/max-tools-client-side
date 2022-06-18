@@ -17,11 +17,12 @@ const FeaturedProducts = () => {
             <div className="container mx-auto" style={{ maxWidth: "1100px" }}>
                 <div className="mb-5">
                     <h2 className="text-2xl md:text-4xl font-extrabold text-center ">
-                        New Collection
+                        TRENDING PRODUCTS
                     </h2>
                     <p className=" max-w-md mx-auto mt-5 mb-16">
-                        You contribute over half of your life operating. Let us help
-                        you find the right fit for you or your corporation.
+                        Rely on the Max Smart Manufacturing Platform to connect, automate, track,
+                        and analyze your operations.
+
                     </p>
                 </div>
                 <div className="mt-10">
