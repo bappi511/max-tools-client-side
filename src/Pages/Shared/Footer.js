@@ -66,7 +66,7 @@ const Footer = () => {
                 </div>
             </footer >
             <div style={{ backgroundColor: '#111111', color: '#cccccc' }}>
-                <p className='text-center p-2'> Copyright {year} &copy; Max Tools. Powered By Bappi Hossain</p>
+                <p className='text-center p-2'><small> Copyright {year} &copy; max-tools <span className='text-slate-500'>|</span> Powered by Bappi Hossain</small></p>
                 <div className='flex gap-5 text-xl justify-center items-center mt-1 pb-3'>
                     <Link to="/" className="hover:text-white hover:scale-110 transition-all"><FaFacebookF></FaFacebookF></Link>
                     <Link to="/" className="hover:text-white hover:scale-110 transition-all"> <FaInstagram></FaInstagram></Link>
