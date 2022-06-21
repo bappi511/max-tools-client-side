@@ -6,7 +6,7 @@ const Product = ({ product }) => {
     const navigate = useNavigate();
 
     const handleToPurchase = (id) => {
-        navigate(`/Product/${id}`);
+        navigate(`/purchase/${id}`);
     };
     return (
         <div className="item border-slate-100 border-2 rounded-lg">

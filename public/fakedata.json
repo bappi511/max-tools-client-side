@@ -1,44 +1,50 @@
 [
     {
-        "name": "random orbital palm sander",
+        "name": "Random Orbital Sander",
         "price": "300",
         "quantity": 40,
         "minimum_order": 10,
-        "img": "https://i.ibb.co/sjzySHW/product1.png"
+        "img": "https://i.ibb.co/sjzySHW/product1.png",
+        "details": "Sand and clean wood with the DEWALT DWE6423 Industrial Random Orbital Sander. The 125mm disc uses velcro (hook and loop) paper for quick and easy changing."
     },
     {
-        "name": "craftsman bolt on drill",
+        "name": "Craftsman Bolt on Drill",
         "price": "300",
         "quantity": 40,
         "minimum_order": 10,
-        "img": "https://i.ibb.co/6RMqxhK/product2.png"
+        "img": "https://i.ibb.co/6RMqxhK/product2.png",
+        "details": "Drill driver, Bolt-On body, charger and battery.Bolt-On Drill Driver features a full metal dual sleeve chuck for serious performance.11 Speed clutch adjusts to eliminate stripping of screws.Powered by a 20 Volt MAX* Lithium Ion Battery, this driver spins until the job is done."
     },
     {
         "name": "CORDLESS DRILL/DRIVER",
         "price": "300",
         "quantity": 40,
         "minimum_order": 10,
-        "img": "https://i.ibb.co/gjZfmN6/product3.png"
+        "img": "https://i.ibb.co/gjZfmN6/product3.png",
+        "details": "The CORDLESS DRILL/DRIVER FlexClick Drill Driver 18v provides the optimum solution in most working areas around the site. At just 140mm in length, this drill driver's compact tool dimensions are suited to operation in tight spaces, and with the addition of flexible adaptors, it reaches even further."
     },
     {
-        "name": "colt palm router",
+        "name": "Colt Palm Router",
         "price": "300",
         "quantity": 40,
         "minimum_order": 10,
-        "img": "https://i.ibb.co/nPqk6Cp/product4.png"
+        "img": "https://i.ibb.co/nPqk6Cp/product4.png",
+        "details": "Colt Palm Router features a 1.0 Horse Power 5.6 amp variable speed motor with speeds from 16,000 to 35,000 RPM Convenient: Provides a straight edge guide to lead router along edges of work piece or up to 3-5/8 inch from edge; The wood router also features an angled cord exit to keep the cord out of the way when working"
     },
     {
         "name": "Circular Saw",
         "price": "300",
         "quantity": 40,
         "minimum_order": 10,
-        "img": "https://i.ibb.co/F3jJJQm/product5.png"
+        "img": "https://i.ibb.co/F3jJJQm/product5.png",
+        "details": "The DCS391B 20V MAX 6-1/2 in. circular saw with a 6-1/2 in. carbide tipped blade operates on a powerful 5150 rpm motor with a 0 to 50-degree bevel capacity on a lightweight and durable magnesium shoe."
     },
     {
         "name": " Cordless Chainsaw",
         "price": "300",
         "quantity": 40,
         "minimum_order": 10,
-        "img": "https://i.ibb.co/P5pjBT5/product6.png"
+        "img": "https://i.ibb.co/P5pjBT5/product6.png",
+        "details": "Lightweight and compact (3.6kg), ideal for one-handed cuts 30cm Oregon bar cuts almost twice its length (that's a half meter diameter log) 7.68 m/s chain speed allows completion of tasks in a controlled manner Chain brake stops in less than 1 second for added safety"
     }
 ]
