@@ -7,8 +7,8 @@ module.exports = {
     themes: [
       {
         maxTools: {
-          primary: "#a991f7",
-          secondary: "#f6d860",
+          primary: "#1E293B",
+          secondary: "#0C4A6E",
           accent: "#37cdbe",
           neutral: "#3d4451",
           "base-100": "#ffffff",

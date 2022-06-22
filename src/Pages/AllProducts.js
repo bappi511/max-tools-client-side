@@ -14,7 +14,7 @@ const AllProducts = ({ product }) => {
         return <Loading></Loading>;
     }
     return (
-        <div className="pt-10 md:pt-18  px-3">
+        <div className="pt-10 pb-5 md:pt-18  px-3">
             <div className="container mx-auto" style={{ maxWidth: "1100px" }}>
                 <div className="mb-5">
                     <h2 className="text-2xl md:text-4xl font-extrabold text-center ">

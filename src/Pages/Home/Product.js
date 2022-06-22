@@ -16,7 +16,7 @@ const Product = ({ product }) => {
                     alt=""
                     className="item-thumbnail w-full h-auto object-cover rounded-t-lg transition-all duration-500"
                 />
-                <span className="absolute top-0 right-0 text-sm bg-primary-content text-white py-1 px-2">
+                <span className="absolute top-0 right-0 text-sm bg-primary text-white py-1 px-2">
                     Available: <strong>{quantity}</strong>
                 </span>
             </div>
