@@ -86,7 +86,7 @@ const Login = () => {
                                         <p className="text-sm text-left">
                                             New to Max Tools?
                                             <Link
-                                                to="/signup"
+                                                to="/register"
                                                 className="underline ml-1 text-primary"
                                             >
                                                 Create Account
