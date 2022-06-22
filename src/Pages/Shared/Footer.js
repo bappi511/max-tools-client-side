@@ -47,7 +47,7 @@ const Footer = () => {
                         </div>
                         <div>
                             <p className="footer-title mb-3 tracking-wide">
-                                Subscribe to the newsletter to get the latest updates.
+                                SUBSCRIBE FOR NEWSLETTER
                             </p>
                             <form action="" className="">
                                 <input
