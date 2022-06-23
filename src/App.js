@@ -4,6 +4,7 @@ import './App.css';
 import AllProducts from './Pages/AllProducts';
 import Login from './Pages/Authentications/Login/Login';
 import Register from './Pages/Authentications/Register/Register';
+import Dashboard from './Pages/Dashboard/Dashboard';
 import Home from './Pages/Home/Home';
 import Purchase from './Pages/Purchase';
 import Footer from './Pages/Shared/Footer';
@@ -30,7 +31,16 @@ function App() {
             path="products"
             element={<AllProducts></AllProducts>}
           ></Route>
-
+          <Route path="dashboard" element={<Dashboard></Dashboard>}>
+            <Route
+              index
+              element={
+                <h2 className="text-2xl">
+                  Welcome to the dashboard
+                </h2>
+              }
+            ></Route>
+          </Route>
         </Routes>
         <Footer></Footer>
       </QueryClientProvider>
