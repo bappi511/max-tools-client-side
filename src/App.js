@@ -15,34 +15,35 @@ function App() {
   return (
     <div className='App'>
       <QueryClientProvider client={queryClient}>
-        <Navbar></Navbar>
-        <Routes>
-          <Route path='/' element={<Home></Home>}></Route>
+        <Navbar>
+          <Routes>
+            <Route path='/' element={<Home></Home>}></Route>
 
-          <Route path='login' element={<Login></Login>}></Route>
+            <Route path='login' element={<Login></Login>}></Route>
 
-          <Route path='register' element={<Register></Register>}></Route>
+            <Route path='register' element={<Register></Register>}></Route>
 
-          <Route
-            path="purchase/:_id" element={<Purchase></Purchase>}>
-          </Route>
-
-          <Route
-            path="products"
-            element={<AllProducts></AllProducts>}
-          ></Route>
-          <Route path="dashboard" element={<Dashboard></Dashboard>}>
             <Route
-              index
-              element={
-                <h2 className="text-2xl">
-                  Welcome to the dashboard
-                </h2>
-              }
+              path="purchase/:_id" element={<Purchase></Purchase>}>
+            </Route>
+
+            <Route
+              path="products"
+              element={<AllProducts></AllProducts>}
             ></Route>
-          </Route>
-        </Routes>
-        <Footer></Footer>
+            <Route path="dashboard" element={<Dashboard></Dashboard>}>
+              <Route
+                index
+                element={
+                  <h2 className="text-2xl">
+                    Welcome to the dashboard
+                  </h2>
+                }
+              ></Route>
+            </Route>
+          </Routes>
+          <Footer></Footer>
+        </Navbar>
       </QueryClientProvider>
     </div>
   );

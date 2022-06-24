@@ -11,8 +11,6 @@ const Purchase = () => {
 
     const {
         register,
-        handleSubmit,
-        reset,
         formState: { errors },
     } = useForm();
 
@@ -21,7 +19,6 @@ const Purchase = () => {
     const {
         data: product,
         isLoading,
-        refetch,
     } = useQuery("product", () =>
         fetch(`http://localhost:5000/product/${_id}`).then((res) => {
             return res.json();
@@ -53,7 +50,7 @@ const Purchase = () => {
         }
     };
     return (
-        <div className=" pt-20 px-3">
+        <div className=" pt-20 pb-10 px-3">
             <div className="container mx-auto" style={{ maxWidth: "1000px" }}>
                 <div className="md:flex justify-between gap-5">
                     <div className="md:w-3/6">
