@@ -4,6 +4,7 @@ import './App.css';
 import AllProducts from './Pages/AllProducts';
 import Login from './Pages/Authentications/Login/Login';
 import Register from './Pages/Authentications/Register/Register';
+import AddProduct from './Pages/Dashboard/AddProduct';
 import AdminUser from './Pages/Dashboard/AdminUser';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Home from './Pages/Home/Home';
@@ -39,6 +40,12 @@ function App() {
                   <h2 className="text-2xl">
                     Welcome to the dashboard
                   </h2>
+                }
+              ></Route>
+              <Route
+                path="add-product"
+                element={
+                  <AddProduct></AddProduct>
                 }
               ></Route>
               <Route
