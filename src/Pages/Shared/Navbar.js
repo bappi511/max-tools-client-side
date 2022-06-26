@@ -1,5 +1,4 @@
 import { signOut } from 'firebase/auth';
-import React, { Children } from 'react';
 import logo from '../../assets/images/logo.png';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
@@ -58,7 +57,7 @@ const Navbar = ({ children }) => {
                                 </li>
                             </>
                         )}
-                        {admin && (
+                        {(
                             <>
                                 <li>
                                     <Link className=" text-black"
@@ -84,9 +83,9 @@ const Navbar = ({ children }) => {
                                 <li>
                                     <Link
                                         className=" text-black"
-                                        to="/dashboard/make-admin"
+                                        to="/dashboard/admin-user"
                                     >
-                                        Make An Admin
+                                        Admin User
                                     </Link>
                                 </li>
                             </>
@@ -98,12 +97,12 @@ const Navbar = ({ children }) => {
 
 
     return (
-        <div className='mb-16'>
+        <div className=''>
             <div className="drawer drawer-end">
                 <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col">
                     {/* <!-- Navbar --> */}
-                    <div className="w-full navbar shadow-sm fixed top-0 z-10 bg-sky-900 text-white">
+                    <div className="w-full navbar shadow-sm sticky top-0 z-10 bg-sky-900 text-white">
                         <div className="container mx-auto">
                             <div className="flex-none lg:hidden">
                                 <label for="my-drawer-3" className="btn btn-square btn-ghost">

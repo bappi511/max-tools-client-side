@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from '../../../assets/images/logo.png';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
@@ -8,10 +8,11 @@ import {
 import { useForm } from "react-hook-form";
 import Loading from '../../Shared/Loading';
 import auth from '../../../firebase.init';
+import useToken from '../../../Hooks/useToken';
 const Login = () => {
-    const [signInWithEmailAndPassword, user, loading, error] =
+    const [signInWithEmailAndPassword, user, loading] =
         useSignInWithEmailAndPassword(auth);
-    const [signInWithGoogle, gUser, gLoading, gError] =
+    const [signInWithGoogle, gUser, gLoading] =
         useSignInWithGoogle(auth);
     const {
         register,
@@ -21,14 +22,19 @@ const Login = () => {
     } = useForm();
     const navigate = useNavigate();
     const location = useLocation();
-    let from = location.state?.from?.pathname || "/";
+    const [token] = useToken(user || gUser);
+    const from = location.state?.from?.pathname || "/";
+
+    useEffect(() => {
+        if (token) {
+            navigate(from, { replace: true });
+        }
+    }, [token, from, navigate]);
 
     if (loading || gLoading) {
         return <Loading></Loading>;
     }
-    if (user) {
-        navigate(from, { replace: true });
-    }
+
     const handleLogin = (data) => {
         const { email, password } = data;
         signInWithEmailAndPassword(email, password);
