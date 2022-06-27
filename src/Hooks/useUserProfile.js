@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 const useUserProfile = (user) => {
     const email = user?.email;
     const {
-        data: userProfile,
+        data: userInfo,
         isLoading,
         refetch,
     } = useQuery("userProfile", () =>
@@ -16,7 +16,7 @@ const useUserProfile = (user) => {
         }).then((res) => res.json())
     );
 
-    return [userProfile, isLoading, refetch];
+    return [userInfo, isLoading, refetch];
 };
 
 export default useUserProfile;

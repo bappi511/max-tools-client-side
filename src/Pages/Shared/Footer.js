@@ -7,7 +7,7 @@ const Footer = () => {
     const year = today.getFullYear()
     return (
         <div>
-            <footer style={{ backgroundColor: '#191919', color: '#cccccc' }} class="footer p-10">
+            <footer style={{ backgroundColor: '#191919', color: '#cccccc' }} className="footer p-10">
                 <div className="container mx-auto" style={{ maxWidth: "1100px" }}>
                     <div className=" text-left grid grid-cols-1 md:grid-cols-3 gap-10">
                         <div>

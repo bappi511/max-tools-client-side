@@ -4,13 +4,22 @@ import { useQuery } from "react-query";
 import { useForm } from "react-hook-form";
 import Loading from "./Shared/Loading";
 import { FiMinus, FiPlus } from "react-icons/fi";
+import useUserProfile from "../Hooks/useUserProfile";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { format } from "date-fns";
+import toast from "react-hot-toast";
+import auth from "../firebase.init";
 
 
 const Purchase = () => {
     const [quantity, setQuantity] = useState();
+    const [user, loading] = useAuthState(auth);
+    const [userInfo] = useUserProfile(user);
 
     const {
         register,
+        handleSubmit,
+        reset,
         formState: { errors },
     } = useForm();
 
@@ -19,6 +28,7 @@ const Purchase = () => {
     const {
         data: product,
         isLoading,
+        refetch,
     } = useQuery("product", () =>
         fetch(`http://localhost:5000/product/${_id}`).then((res) => {
             return res.json();
@@ -35,7 +45,7 @@ const Purchase = () => {
         setSubtotal(parseInt(product?.price) * quantity);
     }, [quantity, product?.price]);
 
-    if (isLoading) {
+    if (isLoading || loading) {
         return <Loading></Loading>;
     }
 
@@ -49,6 +59,71 @@ const Purchase = () => {
             setQuantity(quantity + 1);
         }
     };
+    const date = new Date();
+    const formattedDate = format(date, "PP");
+    const formattedTime = format(date, "p");
+    const handleOrder = (data) => {
+        console.log(data);
+        const order = {
+            orderDate: formattedDate,
+            orderTime: formattedTime,
+            product: product.name,
+            productID: product._id,
+            productImg: product.img,
+            orderUnit: quantity,
+            orderAmount: subtotal,
+            customerName: userInfo.name,
+            email: userInfo.email,
+            phone: data.phone,
+            company: data.company,
+            street: data.street,
+            city: data.city,
+            country: data.country,
+            txId: "",
+            status: "unpaid",
+        };
+        fetch("http://localhost:5000/order", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+                authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            },
+            body: JSON.stringify(order),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.insertedId) {
+                    toast.success("Order is placed successfully!");
+                    fetch(
+                        `http://localhost:5000/product-available/${product._id}`,
+                        {
+                            method: "PATCH",
+                            body: JSON.stringify({
+                                available: availableUnit - quantity,
+                            }),
+                            headers: {
+                                "Content-type": "application/json; charset=UTF-8",
+                                authorization: `Bearer ${localStorage.getItem(
+                                    "accessToken"
+                                )}`,
+                            },
+                        }
+                    )
+                        .then((response) => response.json())
+                        .then((result) => {
+                            if (result.modifiedCount) {
+                                refetch();
+                            }
+                        });
+                    reset();
+                    setQuantity(minimumUnit);
+                }
+                if (data.message) {
+                    toast.error("Forbidden Access! Please login again");
+                }
+            });
+    }
+
     return (
         <div className=" pt-20 pb-10 px-3">
             <div className="container mx-auto" style={{ maxWidth: "1000px" }}>
@@ -143,20 +218,20 @@ const Purchase = () => {
                     <div className="md:w-3/6">
                         <div className="border shadow-2xl shadow-slate-200 p-10 rounded-lg">
                             <form
-
+                                onSubmit={handleSubmit(handleOrder)}
                                 className=" flex flex-col gap-2 text-left"
                             >
                                 <h2 className="text-2xl mb-2">Order Form</h2>
                                 <input
                                     className="input input-bordered w-full"
                                     type="text"
-
+                                    value={userInfo?.name}
                                     disabled
                                 />
                                 <input
                                     className="input input-bordered w-full"
                                     type="text"
-
+                                    value={user?.email}
                                     disabled
                                 />
                                 <input

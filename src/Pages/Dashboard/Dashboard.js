@@ -14,18 +14,18 @@ const Dashboard = () => {
     return (
         <div className="pt-8 md:pt-16  px-3 z-0">
             <div className="container mx-auto">
-                <div class="drawer drawer-mobile py-5 h-auto">
+                <div className="drawer drawer-mobile py-5 h-auto">
                     <input
                         id="dashboard-drawer"
                         type="checkbox"
-                        class="drawer-toggle"
+                        className="drawer-toggle"
                     />
-                    <div class="drawer-content p-4 pt-0 md:pl-10 text-left">
+                    <div className="drawer-content p-4 pt-0 md:pl-10 text-left">
                         <h2 className="text-3xl mb-5">My dashboard</h2>
                         <Outlet></Outlet>
                     </div>
-                    <div class="hidden lg:flex" style={{ maxHeight: "100%" }}>
-                        <ul class="menu p-4 overflow-y-auto w-auto bg-base-200  rounded-lg gap-1 text-lg block">
+                    <div className="hidden lg:flex" style={{ maxHeight: "100%" }}>
+                        <ul className="menu p-4 overflow-y-auto w-auto bg-base-200  rounded-lg gap-1 text-lg block">
                             {!admin && (
                                 <>
                                     {" "}

@@ -62,11 +62,11 @@ const Reviews = () => {
                                     />
 
                                     <div style={{ color: '#FFBC0B', fontSize: '18px' }} className=" font-light  mt-2 mb-2">
-                                        <i class="fas fa-star filled"></i>
-                                        <i class="fas fa-star filled"></i>
-                                        <i class="fas fa-star filled"></i>
-                                        <i class="fas fa-star filled"></i>
-                                        <i class="fas fa-star filled"></i>
+                                        <i className="fas fa-star filled"></i>
+                                        <i className="fas fa-star filled"></i>
+                                        <i className="fas fa-star filled"></i>
+                                        <i className="fas fa-star filled"></i>
+                                        <i clclassNameass="fas fa-star filled"></i>
                                     </div>
                                     <h4 className="text-xl">{review.author}</h4>
 
