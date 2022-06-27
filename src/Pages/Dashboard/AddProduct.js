@@ -26,12 +26,12 @@ const AddProduct = () => {
             .then((res) => res.json())
             .then((result) => {
                 if (result.success) {
-                    const img = result?.data?.url;
+                    const image = result?.data?.url;
                     const product = {
                         name: data.name,
                         details: data.details,
                         price: data.price,
-                        image: img,
+                        image: image,
                         available: data.available,
                         minimum_order: data.minimumUnit,
                     };

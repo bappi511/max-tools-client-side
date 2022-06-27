@@ -5,31 +5,34 @@ import {
     useSignInWithGoogle,
     useUpdateProfile,
 } from "react-firebase-hooks/auth";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading';
+import useToken from '../../../Hooks/useToken';
 const Register = () => {
     const [createUserWithEmailAndPassword, user, loading, error] =
         useCreateUserWithEmailAndPassword(auth);
     const [updateProfile] = useUpdateProfile(auth);
-    const [signInWithGoogle, gUser, gLoading, gError] =
+    const [signInWithGoogle, gUser, gLoading] =
         useSignInWithGoogle(auth);
     const navigate = useNavigate();
+    const [token] = useToken(user || gUser);
+
     const {
         register,
         handleSubmit,
         formState: { errors },
         reset,
     } = useForm();
-    const location = useLocation();
-    let from = location.state?.from?.pathname || "/";
-    if (user) {
-        navigate(from, { replace: true });
-    }
+
     if (loading || gLoading) {
         return <Loading></Loading>;
     }
+    if (token) {
+        navigate("/dashboard");
+    }
+
     const handleRegister = async (data) => {
         const { name, email, password } = data;
         await createUserWithEmailAndPassword(email, password);

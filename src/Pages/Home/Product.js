@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Product = ({ product }) => {
-    const { _id, name, price, img, quantity, minimum_order } = product;
+    const { _id, name, price, image, available, minimum_order } = product;
     const navigate = useNavigate();
 
     const handleToPurchase = (id) => {
@@ -12,12 +12,12 @@ const Product = ({ product }) => {
         <div className="item border-slate-100 border-2 rounded-lg">
             <div className=" relative h-85 md:h-85 bg-cover bg-no-repeat bg-center rounded-t-lg bg-[#ffffff] overflow-hidden">
                 <img
-                    src={img}
+                    src={image}
                     alt=""
                     className="item-thumbnail w-full h-auto object-cover rounded-t-lg transition-all duration-500"
                 />
                 <span className="absolute top-0 right-0 text-sm bg-primary text-white py-1 px-2">
-                    Available: <strong>{quantity}</strong>
+                    Available: <strong>{available}</strong>
                 </span>
             </div>
             <div className="p-4  text-black rounded-b-lg text-left">

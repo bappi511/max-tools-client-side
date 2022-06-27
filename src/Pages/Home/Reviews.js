@@ -66,7 +66,7 @@ const Reviews = () => {
                                         <i className="fas fa-star filled"></i>
                                         <i className="fas fa-star filled"></i>
                                         <i className="fas fa-star filled"></i>
-                                        <i clclassNameass="fas fa-star filled"></i>
+                                        <i className="fas fa-star filled"></i>
                                     </div>
                                     <h4 className="text-xl">{review.author}</h4>
 

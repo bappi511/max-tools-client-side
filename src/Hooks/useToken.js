@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 const useToken = (user) => {
     const [token, setToken] = useState("");
     useEffect(() => {
-        const email = user?.user.email;
-        const name = user?.user.displayName;
-        const photo = user?.user.photoURL;
+        const email = user?.user?.email;
+        const name = user?.user?.displayName;
+        const photo = user?.user?.photoURL;
         const currentUser = {
             name,
             email,

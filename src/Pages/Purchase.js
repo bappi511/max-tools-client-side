@@ -69,7 +69,7 @@ const Purchase = () => {
             orderTime: formattedTime,
             product: product.name,
             productID: product._id,
-            productImg: product.img,
+            productImg: product.image,
             orderUnit: quantity,
             orderAmount: subtotal,
             customerName: userInfo.name,
@@ -133,7 +133,7 @@ const Purchase = () => {
                             <div className="flex gap-5">
                                 <div className=" h-36 w-36 bg-cover bg-no-repeat bg-center rounded-lg bg-base-200 bg-blend-overlay overflow-hidden">
                                     <img
-                                        src={product?.img}
+                                        src={product?.image}
                                         alt=""
                                         className="item-thumbnail w-full h-full object-cover rounded-t-lg"
                                     />

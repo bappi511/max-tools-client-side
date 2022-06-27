@@ -10,13 +10,15 @@ import useUserProfile from '../../Hooks/useUserProfile';
 const Navbar = ({ children }) => {
     const [user] = useAuthState(auth);
     const [admin] = useAdmin(user);
+    const [userInfo, isLoading, refetch] = useUserProfile(user);
     const navigate = useNavigate();
-    const [userProfile, refetch] = useUserProfile(user);
 
     const logOut = () => {
         signOut(auth);
-        navigate("login");
+        navigate("/");
     };
+
+    refetch();
 
     const menuItems =
         <>
@@ -57,7 +59,7 @@ const Navbar = ({ children }) => {
                                 </li>
                             </>
                         )}
-                        {(
+                        {admin && (
                             <>
                                 <li>
                                     <Link className=" text-black"
@@ -134,9 +136,9 @@ const Navbar = ({ children }) => {
                                                 tabIndex="0"
                                                 className="btn btn-ghost btn-circle avatar"
                                             >
-                                                {userProfile?.photo ? (
+                                                {userInfo?.photo ? (
                                                     <div className="ring rounded-full">
-                                                        <img src={userProfile?.photo} alt="user" />
+                                                        <img src={userInfo?.photo} alt="user" />
                                                     </div>
                                                 ) : (
                                                     <div className="ring rounded-full bg-slate-700 p-3">
