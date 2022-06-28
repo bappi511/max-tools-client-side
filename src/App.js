@@ -8,6 +8,7 @@ import Register from './Pages/Authentications/Register/Register';
 import RequireAdmin from './Pages/Authentications/RequireAdmin';
 import RequireAuth from './Pages/Authentications/RequireAuth';
 import AddProduct from './Pages/Dashboard/AddProduct';
+import AddReview from './Pages/Dashboard/AddReview/AddReview';
 import AdminUser from './Pages/Dashboard/AdminUser';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import ManageProducts from './Pages/Dashboard/ManageProducts/ManageProducts';
@@ -51,6 +52,7 @@ function App() {
                   </h2>
                 }
               ></Route>
+
               <Route
                 path="my-orders"
                 element={<MyOrders></MyOrders>}
@@ -60,6 +62,10 @@ function App() {
                 element={
                   <AddProduct></AddProduct>
                 }
+              ></Route>
+              <Route
+                path="add-review"
+                element={<AddReview></AddReview>}
               ></Route>
               <Route
                 path="manage-all-products"
@@ -80,7 +86,7 @@ function App() {
           <Footer></Footer>
         </Navbar>
         <Toaster
-          position="top-center"
+          position="top-right"
           reverseOrder={true}
           toastOptions={{ duration: 4000 }}
         />
