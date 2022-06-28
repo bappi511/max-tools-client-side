@@ -1,12 +1,16 @@
+import { Toaster } from 'react-hot-toast';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import AllProducts from './Pages/AllProducts';
 import Login from './Pages/Authentications/Login/Login';
 import Register from './Pages/Authentications/Register/Register';
+import RequireAdmin from './Pages/Authentications/RequireAdmin';
+import RequireAuth from './Pages/Authentications/RequireAuth';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import AdminUser from './Pages/Dashboard/AdminUser';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import ManageProducts from './Pages/Dashboard/ManageProducts/ManageProducts';
 import Home from './Pages/Home/Home';
 import Purchase from './Pages/Purchase';
 import Footer from './Pages/Shared/Footer';
@@ -26,7 +30,11 @@ function App() {
             <Route path='register' element={<Register></Register>}></Route>
 
             <Route
-              path="purchase/:_id" element={<Purchase></Purchase>}>
+              path="purchase/:_id" element={
+                <RequireAuth>
+                  <Purchase></Purchase>
+                </RequireAuth>
+              }>
             </Route>
 
             <Route
@@ -49,6 +57,14 @@ function App() {
                 }
               ></Route>
               <Route
+                path="manage-all-products"
+                element={
+                  <RequireAdmin>
+                    <ManageProducts></ManageProducts>
+                  </RequireAdmin>
+                }
+              ></Route>
+              <Route
                 path="admin-user"
                 element={
                   <AdminUser></AdminUser>
@@ -58,6 +74,11 @@ function App() {
           </Routes>
           <Footer></Footer>
         </Navbar>
+        <Toaster
+          position="top-center"
+          reverseOrder={true}
+          toastOptions={{ duration: 4000 }}
+        />
       </QueryClientProvider>
     </div>
   );

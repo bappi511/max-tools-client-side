@@ -10,11 +10,11 @@ const Product = ({ product }) => {
     };
     return (
         <div className="item border-slate-100 border-2 rounded-lg">
-            <div className=" relative h-85 md:h-85 bg-cover bg-no-repeat bg-center rounded-t-lg bg-[#ffffff] overflow-hidden">
+            <div className=" relative  bg-cover bg-no-repeat bg-center rounded-t-lg bg-[#ffffff] overflow-hidden">
                 <img
                     src={image}
                     alt=""
-                    className="item-thumbnail w-full h-auto object-cover rounded-t-lg transition-all duration-500"
+                    className="h-72 md:h-56 item-thumbnail w-full object-cover rounded-t-lg transition-all duration-500"
                 />
                 <span className="absolute top-0 right-0 text-sm bg-primary text-white py-1 px-2">
                     Available: <strong>{available}</strong>
