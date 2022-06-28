@@ -11,6 +11,7 @@ import AddProduct from './Pages/Dashboard/AddProduct';
 import AdminUser from './Pages/Dashboard/AdminUser';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import ManageProducts from './Pages/Dashboard/ManageProducts/ManageProducts';
+import MyOrders from './Pages/Dashboard/MyOrders';
 import Home from './Pages/Home/Home';
 import Purchase from './Pages/Purchase';
 import Footer from './Pages/Shared/Footer';
@@ -49,6 +50,10 @@ function App() {
                     Welcome to the dashboard
                   </h2>
                 }
+              ></Route>
+              <Route
+                path="my-orders"
+                element={<MyOrders></MyOrders>}
               ></Route>
               <Route
                 path="add-product"
