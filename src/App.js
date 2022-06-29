@@ -16,6 +16,7 @@ import ManageProducts from './Pages/Dashboard/ManageProducts/ManageProducts';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import UserProfile from './Pages/Dashboard/UserProfileUpdate/UserProfile';
 import Home from './Pages/Home/Home';
+import Payment from './Pages/Payment/Payment';
 import Purchase from './Pages/Purchase';
 import Footer from './Pages/Shared/Footer';
 import Navbar from './Pages/Shared/Navbar';
@@ -45,6 +46,22 @@ function App() {
               path="products"
               element={<AllProducts></AllProducts>}
             ></Route>
+            <Route
+              path="payment/:id"
+              element={
+                <RequireAuth>
+                  <Payment></Payment>
+                </RequireAuth>
+              }
+            ></Route>
+            {/* <Route
+              path="payment-success/:tId"
+              element={
+                <RequireAuth>
+                  <PaymentSuccess></PaymentSuccess>
+                </RequireAuth>
+              }
+            ></Route> */}
             <Route path="dashboard" element={<Dashboard></Dashboard>}>
               <Route
                 index
