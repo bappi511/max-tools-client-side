@@ -5,7 +5,6 @@ import { TiWarningOutline } from "react-icons/ti";
 import { useQuery } from "react-query";
 import auth from "../../firebase.init";
 import Loading from '../Shared/Loading';
-
 const ManageAllOrders = () => {
     const [user, loading] = useAuthState(auth);
     const [deleteOrderId, setDeleteOrderId] = useState("");
@@ -67,9 +66,9 @@ const ManageAllOrders = () => {
     return (
         <div>
             <h2 className="text-xl mb-2">Manage all orders</h2>
-            <div class="overflow-x-auto w-full">
+            <div className="overflow-x-auto grab w-full">
                 {allOrders?.length !== 0 ? (
-                    <table class="table w-full">
+                    <table className="table w-full ">
                         <thead>
                             <tr>
                                 <th>Product</th>
@@ -86,9 +85,9 @@ const ManageAllOrders = () => {
                             {allOrders?.map((order) => (
                                 <tr key={order._id}>
                                     <td>
-                                        <div class="flex items-center space-x-3">
-                                            <div class="avatar">
-                                                <div class="mask mask-squircle w-12 h-12">
+                                        <div className="flex items-center space-x-3">
+                                            <div className="avatar">
+                                                <div className="mask mask-squircle w-12 h-12">
                                                     <img
                                                         src={order.productImg}
                                                         alt="Avatar Tailwind CSS Component"
@@ -96,7 +95,7 @@ const ManageAllOrders = () => {
                                                 </div>
                                             </div>
                                             <div>
-                                                <div class="font-bold">{order.product}</div>
+                                                <div className="font-bold">{order.product}</div>
                                                 <span className="text-xs text-slate-400">
                                                     Order#{order._id}
                                                 </span>
@@ -181,10 +180,10 @@ const ManageAllOrders = () => {
             </div>
             {deleteOrderId && (
                 <>
-                    <input type="checkbox" id="delete-order" class="modal-toggle" />
-                    <div class="modal modal-bottom sm:modal-middle">
-                        <div class="modal-box">
-                            <h3 class="font-bold text-lg flex items-end ">
+                    <input type="checkbox" id="delete-order" className="modal-toggle" />
+                    <div className="modal modal-bottom  z-50 sm:modal-middle">
+                        <div className="modal-box h-[450px]">
+                            <h3 className="font-bold text-lg flex items-end ">
                                 <TiWarningOutline className="text-5xl text-red-500"></TiWarningOutline>
                                 Are you sure?
                             </h3>
@@ -193,16 +192,16 @@ const ManageAllOrders = () => {
                                 be deleted permanently.
                             </p>
 
-                            <div class="modal-action">
+                            <div className="modal-action">
                                 <button
                                     onClick={() => setDeleteOrderId("")}
-                                    class="btn text-white border-0"
+                                    className="btn text-white border-0"
                                 >
                                     Cancel
                                 </button>
                                 <button
                                     onClick={() => handleCancelOrder(deleteOrderId)}
-                                    class="btn bg-red-500 hover:bg-red-600 text-white border-0"
+                                    className="btn bg-red-500 hover:bg-red-600 text-white border-0"
                                 >
                                     Delete
                                 </button>

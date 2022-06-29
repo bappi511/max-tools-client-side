@@ -7,13 +7,14 @@ import Loading from '../Shared/Loading';
 
 const Dashboard = () => {
     const [user, loading] = useAuthState(auth);
+
     const [admin, adminLoading] = useAdmin(user);
     if (loading || adminLoading) {
         return <Loading></Loading>;
     }
     return (
-        <div className="pt-8 md:pt-16  px-3 z-0">
-            <div className="container mx-auto">
+        <div className="pt-8 md:pt-16  px-3">
+            <div className=" mx-2">
                 <div className="drawer drawer-mobile py-5 h-auto">
                     <input
                         id="dashboard-drawer"
