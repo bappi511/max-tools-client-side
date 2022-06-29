@@ -152,7 +152,7 @@ const Navbar = ({ children }) => {
                                             >
                                                 <li>
                                                     <Link
-                                                        to="/dashboard/my-profile"
+                                                        to="/dashboard/user-profile"
                                                         className="justify-between text-md bg-white text-black "
                                                     >
                                                         My Profile

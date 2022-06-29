@@ -11,8 +11,10 @@ import AddProduct from './Pages/Dashboard/AddProduct';
 import AddReview from './Pages/Dashboard/AddReview/AddReview';
 import AdminUser from './Pages/Dashboard/AdminUser';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
 import ManageProducts from './Pages/Dashboard/ManageProducts/ManageProducts';
 import MyOrders from './Pages/Dashboard/MyOrders';
+import UserProfile from './Pages/Dashboard/UserProfileUpdate/UserProfile';
 import Home from './Pages/Home/Home';
 import Purchase from './Pages/Purchase';
 import Footer from './Pages/Shared/Footer';
@@ -68,10 +70,22 @@ function App() {
                 element={<AddReview></AddReview>}
               ></Route>
               <Route
+                path="user-profile"
+                element={<UserProfile></UserProfile>}
+              ></Route>
+              <Route
                 path="manage-all-products"
                 element={
                   <RequireAdmin>
                     <ManageProducts></ManageProducts>
+                  </RequireAdmin>
+                }
+              ></Route>
+              <Route
+                path="manage-all-orders"
+                element={
+                  <RequireAdmin>
+                    <ManageAllOrders></ManageAllOrders>
                   </RequireAdmin>
                 }
               ></Route>

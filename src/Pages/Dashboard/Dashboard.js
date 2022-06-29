@@ -48,7 +48,7 @@ const Dashboard = () => {
                                     <li>
                                         <Link
                                             className="bg-transparent"
-                                            to="/dashboard/my-profile"
+                                            to="/dashboard/user-profile"
                                         >
                                             My Profile
                                         </Link>
@@ -81,18 +81,11 @@ const Dashboard = () => {
                                             Manage All Products
                                         </Link>
                                     </li>
+
                                     <li>
                                         <Link
                                             className="bg-transparent"
-                                            to="/dashboard/make-admin"
-                                        >
-                                            Make Admin
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
-                                            className="bg-transparent"
-                                            to="/dashboard/my-profile"
+                                            to="/dashboard/user-profile"
                                         >
                                             My Profile
                                         </Link>
