@@ -7,6 +7,7 @@ import Login from './Pages/Authentications/Login/Login';
 import Register from './Pages/Authentications/Register/Register';
 import RequireAdmin from './Pages/Authentications/RequireAdmin';
 import RequireAuth from './Pages/Authentications/RequireAuth';
+import Blogs from './Pages/Blogs';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import AddReview from './Pages/Dashboard/AddReview/AddReview';
 import AdminUser from './Pages/Dashboard/AdminUser';
@@ -17,6 +18,7 @@ import MyOrders from './Pages/Dashboard/MyOrders';
 import UserProfile from './Pages/Dashboard/UserProfileUpdate/UserProfile';
 import Home from './Pages/Home/Home';
 import Payment from './Pages/Payment/Payment';
+import PaymentSuccess from './Pages/Payment/PaymentSuccess';
 import Purchase from './Pages/Purchase';
 import Footer from './Pages/Shared/Footer';
 import Navbar from './Pages/Shared/Navbar';
@@ -33,6 +35,7 @@ function App() {
             <Route path='login' element={<Login></Login>}></Route>
 
             <Route path='register' element={<Register></Register>}></Route>
+            <Route path='blogs' element={<Blogs></Blogs>}></Route>
 
             <Route
               path="purchase/:_id" element={
@@ -54,14 +57,14 @@ function App() {
                 </RequireAuth>
               }
             ></Route>
-            {/* <Route
+            <Route
               path="payment-success/:tId"
               element={
                 <RequireAuth>
                   <PaymentSuccess></PaymentSuccess>
                 </RequireAuth>
               }
-            ></Route> */}
+            ></Route>
             <Route path="dashboard" element={<Dashboard></Dashboard>}>
               <Route
                 index
