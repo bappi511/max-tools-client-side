@@ -1,6 +1,20 @@
-# Getting Started with Create React App
+# Max Tools manufacturer website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ Max Tools manufacturer website Live [View here](https://max-tools-9198f.web.app/).
 
-## Available Scripts
+## Features
+- Dashboard
+- User authentication
+- Admin/User separate account
+- Stripe Payment Integration
+- Profile update and make admin authorization
+- Product add and,edit and delete
 
+## Technology
+- HTML, CSS
+- JavaScript
+- React JS
+- React router
+- Tailwind
+- Firebase
+- JWT

@@ -7,7 +7,7 @@ const useUserProfile = (user) => {
         isLoading,
         refetch,
     } = useQuery("userProfile", () =>
-        fetch(`http://localhost:5000/user/${email}`, {
+        fetch(`https://aqueous-sierra-90066.herokuapp.com/user/${email}`, {
             method: "GET",
             headers: {
                 "Content-type": "application/json; charset=UTF-8",

@@ -28,7 +28,7 @@ const ManageProducts = () => {
         isLoading,
         refetch,
     } = useQuery("manageProducts", () =>
-        fetch("http://localhost:5000/product").then((res) =>
+        fetch("https://aqueous-sierra-90066.herokuapp.com/product").then((res) =>
             res.json()
         )
     );
@@ -39,7 +39,7 @@ const ManageProducts = () => {
     const handleUpdate = (event, id) => {
         event.preventDefault();
         if (productName && productDetails && price && available && minimumOrder) {
-            fetch(`http://localhost:5000/product/${id}`, {
+            fetch(`https://aqueous-sierra-90066.herokuapp.com/product/${id}`, {
                 method: "PATCH",
                 body: JSON.stringify({
                     name: productName,
@@ -72,7 +72,7 @@ const ManageProducts = () => {
     };
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/product/${id}`, {
+        fetch(`https://aqueous-sierra-90066.herokuapp.com/product/${id}`, {
             method: "DELETE",
             headers: {
                 "content-type": "application/json",

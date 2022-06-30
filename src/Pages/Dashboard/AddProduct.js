@@ -35,7 +35,7 @@ const AddProduct = () => {
                         available: data.available,
                         minimum_order: data.minimumUnit,
                     };
-                    fetch("http://localhost:5000/product", {
+                    fetch("https://aqueous-sierra-90066.herokuapp.com/product", {
                         method: "POST",
                         headers: {
                             "content-type": "application/json",

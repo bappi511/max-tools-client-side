@@ -1,11 +1,11 @@
 [
     {
         "id": 1,
-        "name": "Hexa Tools Manufecturer",
-        "details": "Hexa tools is a manufecturer app where wholesaler can purchase products and make online payment and admin can manage orders,products etc",
+        "name": "max Tools Manufecture",
+        "details": "Hexa tools is a manufecture app where wholesaler can purchase products and make online payment and admin can manage orders,products etc",
         "technologies": "React, node, express, mongodb",
-        "live": "https://hexa-tools.web.app/",
-        "thumbnail": "https://i.ibb.co/f95JKJ3/project3.png"
+        "live": "https://max-tools-9198f.web.app/",
+        "thumbnail": "https://i.ibb.co/261Lx9C/project1.png"
     },
     {
         "id": 2,

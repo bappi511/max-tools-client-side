@@ -7,7 +7,6 @@ const UpdateProfile = ({ update, setUpdate, userInfo, refetch }) => {
     const [updating, setUpdating] = useState(false);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
-    const [bio, setBio] = useState("");
     const [address, setAddress] = useState("");
     const [country, setCountry] = useState("");
     const [phone, setPhone] = useState("");
@@ -19,7 +18,6 @@ const UpdateProfile = ({ update, setUpdate, userInfo, refetch }) => {
     useEffect(() => {
         setName(userInfo?.name);
         setEmail(userInfo?.email);
-        setBio(userInfo?.bio);
         setAddress(userInfo?.address);
         setCountry(userInfo?.country);
         setPhone(userInfo?.phone);
@@ -50,7 +48,6 @@ const UpdateProfile = ({ update, setUpdate, userInfo, refetch }) => {
                         updateFirebaseProfile(name, img);
                         const data = {
                             name: name,
-                            bio: bio,
                             address: address,
                             country: country,
                             phone: phone,
@@ -58,7 +55,7 @@ const UpdateProfile = ({ update, setUpdate, userInfo, refetch }) => {
                             github: github,
                             photo: img,
                         };
-                        fetch(`http://localhost:5000/user/${email}`, {
+                        fetch(`https://aqueous-sierra-90066.herokuapp.com/user/${email}`, {
                             method: "PATCH",
                             headers: {
                                 "content-type": "application/json",
@@ -85,14 +82,13 @@ const UpdateProfile = ({ update, setUpdate, userInfo, refetch }) => {
         } else {
             const data = {
                 name: name,
-                bio: bio,
                 address: address,
                 country: country,
                 phone: phone,
                 facebook: facebook,
                 github: github,
             };
-            fetch(`http://localhost:5000/user/${email}`, {
+            fetch(`https://aqueous-sierra-90066.herokuapp.com/user/${email}`, {
                 method: "PATCH",
                 headers: {
                     "content-type": "application/json",
@@ -134,15 +130,7 @@ const UpdateProfile = ({ update, setUpdate, userInfo, refetch }) => {
                                 onChange={(e) => setName(e.target.value)}
                             />
                         </label>
-                        <label htmlFor="bio">
-                            Bio
-                            <textarea
-                                className="textarea textarea-bordered w-full"
-                                id="bio"
-                                value={bio}
-                                onChange={(e) => setBio(e.target.value)}
-                            />
-                        </label>
+
                         <label htmlFor="address">
                             Address
                             <input

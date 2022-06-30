@@ -14,7 +14,7 @@ const MyOrders = () => {
         isLoading,
         refetch,
     } = useQuery(["myOrders", user], () =>
-        fetch(`http://localhost:5000/order/?email=${user?.email}`, {
+        fetch(`https://aqueous-sierra-90066.herokuapp.com/order/?email=${user?.email}`, {
             method: "GET",
             headers: {
                 "content-type": "application/json",
@@ -28,7 +28,7 @@ const MyOrders = () => {
 
     const handleCancelOrder = (id) => {
         console.log(id);
-        fetch(`http://localhost:5000/order/${id}`, {
+        fetch(`https://aqueous-sierra-90066.herokuapp.com/order/${id}`, {
             method: "DELETE",
             headers: {
                 "content-type": "application/json",

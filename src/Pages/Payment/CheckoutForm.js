@@ -14,7 +14,7 @@ const CheckoutForm = ({ order }) => {
     const amount = parseInt(orderAmount);
 
     useEffect(() => {
-        fetch("http://localhost:5000/create-payment-intent", {
+        fetch("https://aqueous-sierra-90066.herokuapp.com/create-payment-intent", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -66,7 +66,7 @@ const CheckoutForm = ({ order }) => {
             setCardError(intentError?.message);
         } else {
             setCardError("");
-            fetch(`http://localhost:5000/order/${order._id}`, {
+            fetch(`https://aqueous-sierra-90066.herokuapp.com/order/${order._id}`, {
                 method: "PATCH",
                 body: JSON.stringify({
                     txId: paymentIntent.id,

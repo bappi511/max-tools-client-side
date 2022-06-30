@@ -13,7 +13,7 @@ const ManageAllOrders = () => {
         isLoading,
         refetch,
     } = useQuery(["allOrders", user], () =>
-        fetch(`http://localhost:5000/all-orders`, {
+        fetch(`https://aqueous-sierra-90066.herokuapp.com/all-orders`, {
             method: "GET",
             headers: {
                 "content-type": "application/json",
@@ -26,7 +26,7 @@ const ManageAllOrders = () => {
     }
     const handleCancelOrder = (id) => {
         console.log(id);
-        fetch(`http://localhost:5000/order/${id}`, {
+        fetch(`https://aqueous-sierra-90066.herokuapp.com/order/${id}`, {
             method: "DELETE",
             headers: {
                 "content-type": "application/json",
@@ -47,7 +47,7 @@ const ManageAllOrders = () => {
             });
     };
     const handleShipped = (id) => {
-        fetch(`http://localhost:5000/order-shipped/${id}`, {
+        fetch(`https://aqueous-sierra-90066.herokuapp.com/order-shipped/${id}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json",

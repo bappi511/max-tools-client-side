@@ -5,7 +5,7 @@ import Loading from './Shared/Loading';
 
 const AllProducts = ({ product }) => {
     const { data: products, isLoading } = useQuery("allProducts", () =>
-        fetch("http://localhost:5000/product").then((res) =>
+        fetch("https://aqueous-sierra-90066.herokuapp.com/product").then((res) =>
             res.json()
         )
     );

@@ -28,7 +28,7 @@ const AddReview = () => {
             image: user.photoURL,
         };
 
-        fetch("http://localhost:5000/review", {
+        fetch("https://aqueous-sierra-90066.herokuapp.com/review", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
