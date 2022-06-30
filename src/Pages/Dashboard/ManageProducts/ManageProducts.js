@@ -96,7 +96,7 @@ const ManageProducts = () => {
         <div>
             <h2 className="text-xl mb-2">Manage Products</h2>
             <div class="overflow-x-auto w-full">
-                <table class="table w-full">
+                <table class="table w-full ">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -110,7 +110,7 @@ const ManageProducts = () => {
                         {products.map((p) => (
                             <tr key={p._id}>
                                 <td>
-                                    <div class="flex items-center space-x-3">
+                                    <div class="flex items-center space-x-3 ">
                                         <div class="avatar">
                                             <div class="mask mask-squircle w-12 h-12">
                                                 <img src={p.image} alt="product-img" />
@@ -135,29 +135,20 @@ const ManageProducts = () => {
                                             for="update-product"
                                             class=" cursor-pointer"
                                         >
-                                            <FiEdit className="text-2xl hover:text-primary"></FiEdit>
+                                            <FiEdit className="text-2xl text-sky-800 hover:text-orange-400"></FiEdit>
                                         </label>
                                         <label
                                             onClick={() => setDeleteId(p._id)}
                                             for="delete-product"
                                             class=" cursor-pointer"
                                         >
-                                            <AiOutlineDelete className="text-3xl hover:text-red-500"></AiOutlineDelete>
+                                            <AiOutlineDelete className="text-3xl text-red-500 hover:text-red-700"></AiOutlineDelete>
                                         </label>
                                     </div>
                                 </th>
                             </tr>
                         ))}
                     </tbody>
-                    <tfoot>
-                        <tr>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Available</th>
-                            <th>Minimum Order</th>
-                            <th>Action</th>
-                        </tr>
-                    </tfoot>
                 </table>
             </div>
 

@@ -21,6 +21,7 @@ import MyPortfolio from './Pages/MyPortfolio';
 import Payment from './Pages/Payment/Payment';
 import PaymentSuccess from './Pages/Payment/PaymentSuccess';
 import Purchase from './Pages/Purchase';
+import ResetPassword from './Pages/ResetPassword';
 import Footer from './Pages/Shared/Footer';
 import Navbar from './Pages/Shared/Navbar';
 const queryClient = new QueryClient();
@@ -36,6 +37,7 @@ function App() {
             <Route path='login' element={<Login></Login>}></Route>
 
             <Route path='register' element={<Register></Register>}></Route>
+            <Route path='reset-password' element={<ResetPassword></ResetPassword>}></Route>
             <Route path='blogs' element={<Blogs></Blogs>}></Route>
             <Route path='portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
 
@@ -124,7 +126,7 @@ function App() {
         <Toaster
           position="top-right"
           reverseOrder={true}
-          toastOptions={{ duration: 4000 }}
+          toastOptions={{ duration: 3000 }}
         />
       </QueryClientProvider>
     </div>

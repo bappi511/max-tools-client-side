@@ -11,12 +11,17 @@ import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading';
 import useToken from '../../../Hooks/useToken';
 const Register = () => {
+
     const [createUserWithEmailAndPassword, user, loading, error] =
         useCreateUserWithEmailAndPassword(auth);
-    const [updateProfile] = useUpdateProfile(auth);
+
+    const [updateProfile, updating] = useUpdateProfile(auth);
+
     const [signInWithGoogle, gUser, gLoading] =
         useSignInWithGoogle(auth);
+
     const navigate = useNavigate();
+
     const [token] = useToken(user || gUser);
 
     const {
@@ -26,7 +31,7 @@ const Register = () => {
         reset,
     } = useForm();
 
-    if (loading || gLoading) {
+    if (loading || gLoading || updating) {
         return <Loading></Loading>;
     }
     if (token) {
@@ -34,9 +39,9 @@ const Register = () => {
     }
 
     const handleRegister = async (data) => {
-        const { name, email, password } = data;
-        await createUserWithEmailAndPassword(email, password);
-        await updateProfile({ displayName: name });
+        const displayName = data.displayName
+        await createUserWithEmailAndPassword(data.email, data.password);
+        await updateProfile({ displayName: displayName });
         reset();
     };
     return (
@@ -63,7 +68,7 @@ const Register = () => {
                                         className=" flex flex-col gap-2 text-left"
                                     >
                                         <input
-                                            {...register("name", { required: true })}
+                                            {...register("displayName", { required: true })}
                                             className="input input-bordered w-full "
                                             type="text"
                                             placeholder="Full name"

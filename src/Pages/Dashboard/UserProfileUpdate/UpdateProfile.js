@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { useUpdateProfile } from 'react-firebase-hooks/auth';
 import toast from "react-hot-toast";
+import auth from '../../../firebase.init';
 
 const UpdateProfile = ({ update, setUpdate, userInfo, refetch }) => {
     const [updating, setUpdating] = useState(false);
@@ -12,6 +14,7 @@ const UpdateProfile = ({ update, setUpdate, userInfo, refetch }) => {
     const [facebook, setFacebook] = useState("");
     const [github, setGithub] = useState("");
     const [photo, setPhoto] = useState("");
+    const [updateProfileData] = useUpdateProfile(auth);
 
     useEffect(() => {
         setName(userInfo?.name);
@@ -25,6 +28,9 @@ const UpdateProfile = ({ update, setUpdate, userInfo, refetch }) => {
     }, [userInfo]);
 
     const imgbbKey = "cf3707c131de162658e6bb00e6d40602";
+    const updateFirebaseProfile = async (name, img) => {
+        await updateProfileData({ displayName: name, photoURL: img });
+    };
 
     const handleUpdateProfile = (e, email) => {
         e.preventDefault();
@@ -41,6 +47,7 @@ const UpdateProfile = ({ update, setUpdate, userInfo, refetch }) => {
                 .then((result) => {
                     if (result.success) {
                         const img = result.data.url;
+                        updateFirebaseProfile(name, img);
                         const data = {
                             name: name,
                             bio: bio,

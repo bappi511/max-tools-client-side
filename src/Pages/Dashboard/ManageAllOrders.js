@@ -161,18 +161,6 @@ const ManageAllOrders = () => {
                                 </tr>
                             ))}
                         </tbody>
-                        <tfoot>
-                            <tr>
-                                <th>Product</th>
-                                <th>Quantity</th>
-                                <th>Price</th>
-                                <th>Order Date</th>
-                                <th>Customer Name</th>
-                                <th>Customer Email</th>
-                                <th>TxId.</th>
-                                <th>Action</th>
-                            </tr>
-                        </tfoot>
                     </table>
                 ) : (
                     `There is no any order.`

@@ -21,26 +21,34 @@ const Footer = () => {
                             <ul className=" flex flex-col gap-2">
                                 <li>
                                     <Link
-                                        to="/dashboard/my-orders"
+                                        to="/"
                                         className="hover:text-white hover:translate-x-1 transition-all inline-block hover:scale-[1.1]"
                                     >
-                                        Mange Orders
+                                        Branding
                                     </Link>
                                 </li>
                                 <li>
                                     <Link
-                                        to="/dashboard/my-profile"
+                                        to="/"
                                         className="hover:text-white hover:translate-x-1 transition-all inline-block hover:scale-[1.1]"
                                     >
-                                        My Profile
+                                        Design
                                     </Link>
                                 </li>
                                 <li>
                                     <Link
-                                        to="/login"
+                                        to="/"
                                         className="hover:text-white hover:translate-x-1 transition-all inline-block hover:scale-[1.1]"
                                     >
-                                        Login
+                                        Marketing
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        to="/"
+                                        className="hover:text-white hover:translate-x-1 transition-all inline-block hover:scale-[1.1]"
+                                    >
+                                        Advertisement
                                     </Link>
                                 </li>
                             </ul>

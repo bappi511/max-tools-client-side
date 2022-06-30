@@ -14,7 +14,7 @@ const Blogs = () => {
             <div className="container mx-auto" style={{ maxWidth: "1000px" }}>
                 <div className="blogs">
                     {blogs.map((blog) => (
-                        <div key={blog.id} tabIndex="0" className="collapse mb-2 collapse-arrow border border-base-300 bg-base-100 rounded-box">
+                        <div key={blog.id} tabIndex="0" className="collapse mb-2 collapse-arrow border border-base-300  shadow-md text-slate-300 rounded-box bg-primary">
                             <div className="collapse-title text-xl font-medium">
                                 {blog.question}
                             </div>

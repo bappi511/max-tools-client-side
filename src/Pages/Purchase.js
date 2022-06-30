@@ -209,10 +209,16 @@ const Purchase = () => {
                                 </div>
                             </div>
 
-                            <div className="p-5 rounded-lg my-5 text-left bg-slate-200">
-                                <h2 className="text-lg">Product Details - </h2>
-                                <p className="text-slate-600">{product?.details}</p>
+
+                            <div tabindex="0" class="collapse collapse-plus border border-base-300 mt-3 bg-slate-200 rounded-box">
+                                <div class="collapse-title text-xl font-medium">
+                                    <h2 className="text-lg">Product Details - </h2>
+                                </div>
+                                <div class="collapse-content">
+                                    <p className="text-slate-600">{product?.details}</p>
+                                </div>
                             </div>
+
                         </div>
                     </div>
                     <div className="md:w-3/6">
