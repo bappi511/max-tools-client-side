@@ -6,7 +6,6 @@ const Blogs = () => {
     const { data: blogs, isLoading } = useQuery("blogs", () =>
         fetch("blogs.json").then((res) => res.json())
     );
-    console.log(blogs);
     if (isLoading) {
         return <Loading></Loading>;
     }
@@ -15,7 +14,7 @@ const Blogs = () => {
             <div className="container mx-auto" style={{ maxWidth: "1000px" }}>
                 <div className="blogs">
                     {blogs.map((blog) => (
-                        <div tabindex="0" className="collapse mb-2 collapse-arrow border border-base-300 bg-base-100 rounded-box">
+                        <div key={blog.id} tabIndex="0" className="collapse mb-2 collapse-arrow border border-base-300 bg-base-100 rounded-box">
                             <div className="collapse-title text-xl font-medium">
                                 {blog.question}
                             </div>

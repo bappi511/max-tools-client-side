@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Hexa Tools Manufecturer",
+        "details": "Hexa tools is a manufecturer app where wholesaler can purchase products and make online payment and admin can manage orders,products etc",
+        "technologies": "React, node, express, mongodb",
+        "live": "https://hexa-tools.web.app/",
+        "thumbnail": "https://i.ibb.co/f95JKJ3/project3.png"
+    },
+    {
+        "id": 2,
+        "name": "Electronics Warehouse.",
+        "details": "Electronics Warehouse.is a Electronics distributor web app where the distributor can login and update quantity and mark as delivered",
+        "technologies": "Tailwind CSS, React, node, mongodb, firebase",
+        "live": "https://electronics-warehouse-d0803.web.app/",
+        "thumbnail": "https://i.ibb.co/F64zGY1/project2.png"
+    },
+    {
+        "id": 3,
+        "name": "Oving Willson Web App",
+        "details": "Oving Wilson is a web app that solves people. Here you will find various packages to choose from for bangladesh and worldwide",
+        "technologies": "Tailwind css, API, Javascript",
+        "live": "https://resplendent-sfogliatella-80e7d3.netlify.app/",
+        "thumbnail": "https://i.ibb.co/f95JKJ3/project3.png"
+    }
+]

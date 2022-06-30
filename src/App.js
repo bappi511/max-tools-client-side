@@ -17,6 +17,7 @@ import ManageProducts from './Pages/Dashboard/ManageProducts/ManageProducts';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import UserProfile from './Pages/Dashboard/UserProfileUpdate/UserProfile';
 import Home from './Pages/Home/Home';
+import MyPortfolio from './Pages/MyPortfolio';
 import Payment from './Pages/Payment/Payment';
 import PaymentSuccess from './Pages/Payment/PaymentSuccess';
 import Purchase from './Pages/Purchase';
@@ -36,6 +37,7 @@ function App() {
 
             <Route path='register' element={<Register></Register>}></Route>
             <Route path='blogs' element={<Blogs></Blogs>}></Route>
+            <Route path='portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
 
             <Route
               path="purchase/:_id" element={
